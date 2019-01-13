@@ -1,0 +1,13 @@
+apt install nano
+pip3 install ggplot
+pip3 install nltk
+
+
+sed -e "s/pandas.lib/pandas/g" /usr/local/lib/python3.5/dist-packages/ggplot/stats/smoothers.py
+===
+/usr/local/lib/python3.5/dist-packages/ggplot/stats/smoothers.py
+from
+ from pandas.lib import Timestamp
+to
+ from pandas import Timestamp
+
