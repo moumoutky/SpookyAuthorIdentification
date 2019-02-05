@@ -1,16 +1,16 @@
 #%%
-import pandas as pd
-from collections import Counter
-import matplotlib.pyplot as plt
-from ggplot import *
 import nltk
+import matplotlib.pyplot as plt
+import pandas as pd
+import re
+from collections import Counter
+from ggplot import *
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
-import re
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -166,7 +166,4 @@ df_pred = pd.DataFrame({'id': df_test.loc[:, 'id'],
 
 #%%
 # output
-df_pred.to_csv('./python/SpookyAuthorIdentification/output/submission.csv')
-
-
-#%%
+df_pred.to_csv('./SpookyAuthorIdentification/output/submission.csv', index=False)
